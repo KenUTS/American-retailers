@@ -1,7 +1,13 @@
 assignment2
 ==============================
 
-A short description of the project.
+The task at hand involves the development of two distinct models that will be subsequently deployed as Application Programming Interfaces (APIs) in a production environment.
+
+This study proposes the development of a prediction model utilising a Machine Learning algorithm to effectively forecast the sales income of a particular item within a designated retailer on a specific day.
+
+This study proposes the utilisation of a time-series analysis method to develop a forecasting model aimed at predicting the aggregate sales income for all stores and items over the forthcoming seven-day period.
+
+
 
 Project Organization
 ------------
@@ -18,6 +24,11 @@ Project Organization
     ├── docs               <- A default Sphinx project; see sphinx-doc.org for details
     │
     ├── models             <- Trained and serialized models, model predictions, or model summaries
+    │   └── adaboost_default.joblib <- Adaboost with default parameters
+    │   └── adaboost_hyperparameters.joblib <- Adaboost with the best 
+    hyperparameters(n_estimators=400 and learning_rate=0.1)
+    │   └── log_reg_default.joblib <- Logistic Regression Classifier
+    │   └── svc_default.joblib <- SVC with default hyperparamaters
     │
     ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
     │                         the creator's initials, and a short `-` delimited description, e.g.
@@ -37,14 +48,17 @@ Project Organization
     │   │
     │   ├── data           <- Scripts to download or generate data
     │   │   └── make_dataset.py
+    │   │   └── sets.py   <- contains functions used to pop columns, split data, save and load datasets
     │   │
     │   ├── features       <- Scripts to turn raw data into features for modeling
     │   │   └── build_features.py
     │   │
     │   ├── models         <- Scripts to train models and then use trained models to make
     │   │   │                 predictions
-    │   │   ├── predict_model.py
-    │   │   └── train_model.py
+    │   │   ├── predict_model.py <- predict target and print AUROC score
+    │   │   └── train_model.py <- Fit the model
+    │   │   └── null.py    <- Used as baseline model for regression problem
+    │   │   └── baseline.py <- fit baseline model + print rms and mse score
     │   │
     │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
     │       └── visualize.py
