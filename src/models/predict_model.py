@@ -1,4 +1,5 @@
-def print_AUROC_scores(y_preds, y_actuals, set_name=None):
+from sklearn.metrics import mean_squared_error
+def print_MSE_scores(y_preds, y_actuals, set_name=None):
     """Print the AUROC for the provided data
 
     Parameters
@@ -13,11 +14,11 @@ def print_AUROC_scores(y_preds, y_actuals, set_name=None):
     Returns
     -------
     """
-    from sklearn.metrics import roc_auc_score
 
-    print(f"AUROC {set_name}: {roc_auc_score(y_actuals, y_preds)}")
 
-def assess_AUROC_set(model, features, target, set_name=''):
+    print(f"MSE {set_name}: {mean_squared_error(y_actuals, y_preds)}")
+
+def assess_MSE_set(model, features, target, set_name=''):
     """Save the predictions from a trained model on a given set and print its AUROC scores
 
     Parameters
@@ -35,4 +36,4 @@ def assess_AUROC_set(model, features, target, set_name=''):
     -------
     """
     preds = model.predict_proba(features)[:,1]
-    print_AUROC_scores(y_preds=preds, y_actuals=target, set_name=set_name)
+    print_MSE_scores(y_preds=preds, y_actuals=target, set_name=set_name)

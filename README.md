@@ -24,11 +24,9 @@ Project Organization
     ├── docs               <- A default Sphinx project; see sphinx-doc.org for details
     │
     ├── models             <- Trained and serialized models, model predictions, or model summaries
-    │   └── adaboost_default.joblib <- Adaboost with default parameters
-    │   └── adaboost_hyperparameters.joblib <- Adaboost with the best 
-    hyperparameters(n_estimators=400 and learning_rate=0.1)
-    │   └── log_reg_default.joblib <- Logistic Regression Classifier
-    │   └── svc_default.joblib <- SVC with default hyperparamaters
+    │   └── forecasting/SARMIA.joblib <- SARIMA model with (1,1,1,7) season order
+    │   └── predictive/XGboost.joblib <- XGboost with the best 
+    hyperparameters
     │
     ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
     │                         the creator's initials, and a short `-` delimited description, e.g.
@@ -55,7 +53,7 @@ Project Organization
     │   │
     │   ├── models         <- Scripts to train models and then use trained models to make
     │   │   │                 predictions
-    │   │   ├── predict_model.py <- predict target and print AUROC score
+    │   │   ├── predict_model.py <- predict target and print MSE score
     │   │   └── train_model.py <- Fit the model
     │   │   └── null.py    <- Used as baseline model for regression problem
     │   │   └── baseline.py <- fit baseline model + print rms and mse score
