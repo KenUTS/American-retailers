@@ -102,7 +102,7 @@ def save_sets(df_name, X_train=None, y_train=None, X_val=None, y_val=None, path=
 
 def split_save(df,df_name,target_col):
    X,y=pop_target(df, target_col)
-   X_train, y_train, X_val, y_val = split_sets_random(X, y, test_ratio=0.2)
+   X_train, y_train, X_val, y_val = split_sets_random(X, y, test_ratio=0.3)
    save_sets(df_name,X_train, y_train, X_val, y_val, path='../../data/processed/')
 
 def load_sets_train(df_name,path='../../data/processed/'):
