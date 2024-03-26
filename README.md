@@ -1,4 +1,4 @@
-assignment2
+Retail Sales Prediction and Forecasting for American Retailers
 ==============================
 
 The task at hand involves the development of two distinct models that will be subsequently deployed as Application Programming Interfaces (APIs) in a production environment.
